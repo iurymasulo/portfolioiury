@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iury Argel | Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+	.apresentacao {
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, #0d1b2a, #203a43, #356377);
+      text-align: center;
+    }
+
+      .typewriter-text {
+      font-family: 'Courier New', Courier, monospace; /* estilo VS Code */
+      font-size: 0.8rem;
+      white-space: pre-wrap;
+      display: inline-block;
+      overflow: hidden;
+      border-right: 2px solid black;
+      animation: piscaCursor 0.8s steps(2) infinite;
+      color: #6cf2ff; /* estilo terminal (verde neon) */
+      background-color: #0d1b2a; /* fundo escuro como o VS Code */
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+      @keyframes piscaCursor {
+   0% { border-color: black; }
+   50% { border-color: transparent; }
+   100% { border-color: black; }
+
+    }
+	
+      .titulo-principal,
+      .contato h2,
+      .habilidades h2,
+      header h1,
+      header nav a {
+      font-family: Yeseva one;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+      header h1 {
+      font-size: 1.5em;
+    }
+
+      body {
+      font-family: 'Segoe UI', sans-serif; /* ou qualquer outra que estiver usando */
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #356377, #0d1b2a, #0d1b2a, #0d1b2a, #0d1b2a);
+      color: #f8f8f8;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-top: 120px; /* espaço pro menu fixo não cobrir o conteúdo */
+    }
+
+.menu-topo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0d1b2a;
+  color: #fff;
+  z-index: 999;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+.container-menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Nome com fonte pixel e animação */
+.logo {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 40px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.pixel-marquee {
+  position: absolute;
+  display: inline-block;
+  animation: slide-horizontal 15s linear infinite;
+  color: #00ffcc;
+  font-size: 12px;
+}
+
+ .pixel-marquee span {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: #6cf2ff;
+}
+
+ @keyframes slide-horizontal {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Menu */
+nav {
+  position: relative;
+}
+
+  .dino-icon {
+  height: 30px;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+ 
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+  font-family: Yeseva one;
+}
+
+.menu-links li a:hover {
+  color: #00bfff;
+}
+
+/* Botão hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Animação do ícone quando aberto */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* RESPONSIVO: Celular */
+@media (max-width: 768px) {
+  .container-menu {
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 100%;
+    font-size: 8px;
+    height: 25px;
+  }
+
+  .pixel-marquee {
+    animation-duration: 3s;
+  }
+
+  .menu-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #0d1b2a;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .menu-links.show {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-links li a {
+    font-size: 1rem;
+  }
+}
+
+/* RESPONSIVO: Telas grandes */
+@media (min-width: 1200px) {
+  .container-menu {
+    max-width: 1600px;
+    justify-content: space-between;
+    gap: 40px; /* aumenta espaçamento entre logo e menu */
+  }
+
+  .menu-links li a {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 100vw;
+    max-width: 100%;
+    font-size: 10px;
+  }
+}
+
+    /* Sobre mim */
+.sobre-mim {
+  background: linear-gradient(to bottom, #356377, #203a43, #0d1b2a);
+  color: white;
+  padding: 60px 20px;
+}
+
+.sobre-mim .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sobre-mim h2 {
+  font-family: Yeseva One;
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sobre-mim p {
+  font-size: 0.9em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.sobre-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.sobre-bloco.invertido {
+  flex-direction: row-reverse;
+}
+
+.sobre-bloco .texto {
+  min-width: auto;
+  flex: 1;
+}
+
+.foto-circular {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 🔻 RESPONSIVIDADE: texto em cima, imagem embaixo 🔻 */
+@media (max-width: 768px) {
+  .sobre-bloco {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .sobre-bloco.invertido {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sobre-bloco .texto {
+    order: 1;
+    width: 100%;
+    font-size: 0.95em;
+    text-align: justify;
+  }
+
+  .sobre-bloco img.foto-circular {
+    order: 2;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+  }
+}
+
+.intro {
+  background-color: #0d1b2a; /* azul escuro */
+  color: #ffffff;
+  padding: 100px 20px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* 🔽 Descrição abaixo da foto (ajustada) */
+.intro h1 {
+  font-size: 1.2m; /* antes estava 1.5rem */
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* 🔽 Frase "Talent ain't enough" (ajustada) */
+.tagline {
+  font-size: 0.9rem; /* antes estava 1.2em */
+  font-weight: normal; /* tiramos o bold pra suavizar */
+  color: #f0f0f0;
+  font-style: italic;
+  margin-top: 5px;
+  font-family: Yeseva one;
+}
+
+/* 📱 Responsividade para telas menores */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 0.8rem;
+  }
+
+  .tagline {
+    font-size: 0.75rem;
+  }
+}
+
+    .tulip {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      opacity: 0.05;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Tulip_icon.svg/1024px-Tulip_icon.svg.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    /* Tulipas espalhadas */
+    .tulip1 { top: 10%; left: 5%; }
+    .tulip2 { top: 30%; right: 10%; }
+    .tulip3 { bottom: 20%; left: 15%; }
+    .tulip4 { bottom: 10%; right: 5%; }
+
+.habilidades {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 30px;
+  margin: 0 20px;
+}
+
+.habilidades h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #00bfff;
+}
+
+.lista-habilidades {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.lista-habilidades li {
+  background-color: #142a4c;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-shadow: 0 2px 5px rgba(0,191,255,0.3);
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: default;
+  white-space: nowrap; /* Evita quebra em palavras grandes */
+}
+
+/* Hover */
+.lista-habilidades li:hover {
+  background-color: #00bfff;
+  color: #0d1b2a;
+  transform: scale(1.1);
+}
+
+/* RESPONSIVIDADE PARA TELAS MENORES */
+@media (max-width: 600px) {
+  .habilidades {
+    padding: 40px 10px;
+    margin: 0 10px;
+    border-radius: 20px;
+  }
+
+  .habilidades h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .lista-habilidades {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .lista-habilidades li {
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
+}
+
+	.contato {
+     background: linear-gradient(to bottom, #0d1b2a, #203a43, #356377);
+     padding: 50px 20px;
+     text-align: center;
+     margin-top: 80px;
+     border-radius: 30px;
+   }
+
+     .contato h2 {
+     font-size: 1.5em;
+     margin-bottom: 10px;
+     color: #fff;
+   }
+
+     .contato p {
+     font-size: 1.1em;
+     margin-bottom: 30px;
+     color: #fff;
+     text-align: center;
+   }
+
+     .contato-links {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     flex-wrap: wrap;
+   }
+
+     .contato-icon svg {
+     width: 40px;
+     height: 40px;
+     fill: #fff;
+     transition: transform 0.3s ease, fill 0.3s ease;
+   }
+
+     .contato-icon:hover svg {
+     transform: scale(1.2);
+     fill: #0077b5; /* Azul do LinkedIn como destaque */
+   }
+
+.intro {
+  position: relative; /* necessário para posicionar a flor dentro */
+  display: flex;
+  justify-content: center; /* mantém o conteúdo centralizado */
+  align-items: center;
+  padding: 40px;
+  min-height: 250px; /* só pra garantir espaço */
+}
+
+.logo-img {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* centraliza verticalmente */
+  width: 50px;
+  height: auto;
+  z-index: 0;
+  opacity: 0.8; /* opcional: deixar mais suave */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1; /* garante que fique acima da flor */
+}
+
+.profile-pic {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.tagline {
+  margin-top: 5px;
+  font-style: italic;
+  color: #fff;
+  font-size: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.projetos {
+  padding: 40px 0;
+  background: linear-gradient(to bottom, #0d1b2a, #203a43, #356377);
+  text-align: center;
+  margin-top: 80px;
+  border-radius: 30px;
+}
+
+.projetos h2 {
+  font-size: 2.0em;
+  margin-bottom: 30px;
+  font-family: Yeseva one;
+  color: #fff;
+}
+
+.projetos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.projeto-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.projeto-item:hover {
+  transform: scale(1.1);
+}
+
+.projeto-icon {
+  color: #6cf2ff;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 10px;
+}
+
+.curriculo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.curriculo-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1200px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.curriculo-card {
+  width: 120px;
+  background: linear-gradient(to bottom, #356377, #203a43,#0d1b2a, #0d1b2a);
+  border-radius: 15px;
+  padding: 30px;
+  transition: transform 0.3s, background-color 0.3s;
+  text-align: center;
+}
+
+.curriculo-card:hover {
+  transform: scale(1.05);
+  background-color: #6cf2ff;
+}
+
+.curriculo-card a {
+  color: #6cf2ff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.curriculo-card a:visited {
+  color: #6cf2ff;
+}
+
+.curriculo-card svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.curriculo-card span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.carrossel-container {
+  max-width: 700px; /* reduzido */
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(to bottom, #203a43, #356377, #0d1b2a);
+  border-radius: 30px;
+}
+
+.carrossel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  flex: 1 0 100%;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide img {
+  width: 40%; /* menor */
+  max-height: 250px; /* menor */
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.descricao {
+  width: 60%;
+  font-size: 0.95rem;
+}
+
+.descricao h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.nav {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff;
+}
+
+.nav:hover {
+  color: #6cf2ff;
+}
+
+/* Responsividade mantendo a imagem e a descrição lado a lado */
+@media (max-width: 768px) {
+  .slide {
+    flex-direction: row; /* força lado a lado mesmo em telas pequenas */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .slide img {
+    width: 45%; /* ajusta pra telas menores */
+    max-height: 180px;
+  }
+
+  .descricao {
+    width: 50%;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
+
+  </style>
+<body>
+  <header class="menu-topo">
+    <div class="container-menu">
+       <div class="logo">
+       <div class="pixel-marquee">
+       <img src="dino.png" class="dino-icon" alt="Dino" />
+       <span>Talent ain't enough &nbsp; Talent ain't enough &nbsp; Talent ain't enough &nbsp; Talent ain't enough &nbsp; Talent ain't enough &nbsp; Talent ain't enough &nbsp; Talent ain't enough &nbsp; Talent ain't enough &nbsp;</span>
+    </div>
+ </div>       
+	 <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" role="button" tabindex="0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu-links" id="menu-links">
+          <li><a href="#sobre">About Me</a></li>
+          <li><a href="#habilidades">Skills</a></li>
+           <li><a href="https://github.com/iurymasulo" target="_blank" rel="noopener noreferrer">gitHub</a></li>
+          <li><a href="#contato">Contact</a></li>
+          <li><a href="https://www.instagram.com/mazzzulo" target="_blank" rel="noopener noreferrer">IG</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+  <!-- Tulipas discretas no fundo -->
+  <div class="tulip tulip1"></div>
+  <div class="tulip tulip2"></div>
+  <div class="tulip tulip3"></div>
+  <div class="tulip tulip4"></div>
+</div>
+
+  <header class="intro">
+    <img src="tulip.png" alt="Flor decorativa" class="logo-img" />
+
+  <div class="content">
+    <img src="iury2.jpeg" alt="Iury Argel" class="profile-pic" />
+    <h1>Java Developer | Tech student</h1>
+    <p class="tagline">Iury Argel</p>
+  </header>
+    </div>
+</header>
+
+<section class="curriculo-section" id="curriculo">
+  <h2></h2>
+  
+  <div class="curriculo-container">
+    
+     <div class="curriculo-card">
+      <a href="https://iurymasulo.github.io/certified.page/" target="_blank">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="#6cf2ff" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C7.58 2 4 5.58 4 10C4 12.38 5.19 14.47 7 15.74V22L12 19.5L17 22V15.74C18.81 14.47 20 12.38 20 10C20 5.58 16.42 2 12 2ZM15 13.5L12 11.5L9 13.5V10H15V13.5Z"/>
+        </svg>
+        <span>Certifieds</span>
+      </a>
+    </div>
+
+    <div class="curriculo-card">
+      <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/iurymasulo/newresume/main/mazzulo.pdf&embedded=true" target="_blank
+" target="_blank" download>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="#6cf2ff" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM13 9V3.5L18.5 9H13ZM8 13H16V15H8V13ZM8 17H14V19H8V17Z"/>
+        </svg>
+        <span>Resume</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+     <section class="carrossel-container">
+    <div class="carrossel-wrapper">
+      <button class="nav prev">&#10094;</button>
+            
+      <div class="carrossel">
+        <div class="slide active">
+          <img src="code3.png" alt="Foto 1">
+          <div class="descricao">
+            <h3>café, bugs e persistência. Essa é a vida do garoto de programa</h3>
+            <p>EVDC</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="book.jpg" alt="Foto 2">
+          <div class="descricao">
+            <h3>Buscando entender como as máquinas pensam</h3>
+            <p>Heyssaaaa!!!</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="tela.png" alt="Foto 3">
+          <div class="descricao">
+            <h3>Código com orgulho e gastrite</h3>
+            <p>Importante é funcionar.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav next">&#10095;</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+
+  <section class="apresentacao">
+  <div class="container">
+    <h1 class="typewriter-text" id="apresentacao-texto"></h1>
+  </div>
+</section>
+
+  <section class="sobre-mim" id="sobre">
+    <div class="container">
+      <h2>about</h2>
+
+      <!-- Primeira (imagem à direita) -->
+      <div class="sobre-bloco">
+        <div class="texto">
+          <p>"In the dark tunnel of life, the light we seek is the same light that walks with us. Sometimes, finding your focus and career requires getting lost a few times. That’s normal for someone who's still very young. Code is like paint to Van Gogh — believe it"</p>
+        </div>
+        <img src="child.jpg" class="foto-circular" alt="Foto 1" />
+      </div>
+
+      <!-- Segunda (imagem à esquerda) -->
+      <div class="sobre-bloco invertido">
+        <div class="texto">
+          <p>"Art in the sense of creating and developing along with my curiosity about technology, led me to a path I was meant to follow. My goal in the programming world is to become a Full stack developer, and I’m working through specific stages to get there. A true architect of digital creations. The journey is long, but it will be worth it — because it’s about dreams"</p>
+        </div>
+        <img src="book.jpg" class="foto-circular" alt="Foto 2" />
+      </div>
+
+      <!-- Terceira (imagem à direita de novo) -->
+      <div class="sobre-bloco">
+        <div class="texto">
+          <p>"Just like in everything in life, relying on talent alone isn’t enough to succeed. That’s why I highlight the phrase 'Talent ain't enough', fully aware that we can’t stay comfortable and must always strive to improve. And it’s no different in the world of technology — the world is constantly searching for new solutions, and I’m sure some of them can be solved by a skilled tech developer."</p>
+        </div>
+        <img src="code.jpg" class="foto-circular" alt="Foto 3" />
+      </div>
+ </div>
+<section id="habilidades" class="habilidades">
+  <div class="container">
+    <h2>Skills</h2>
+    <ul class="lista-habilidades">
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>HTML & CSS</li>
+      <li>Java</li>
+      <li>React</li>
+      <li>Banco de Dados (MySQL, MongoDB)</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </div>
+</section>
+
+<section class="projetos">
+  <h2>freelas</h2>
+  <div class="projetos-grid">
+    <a href="https://iurymasulo.github.io/calculadora-imc/" class="projeto-item" target="_blank">
+      <img src="https://www.svgrepo.com/show/89910/calculator.svg" alt="Calculadora" class="projeto-icon">
+      <span><strong>BMI</strong></span>
+    </a>
+    <a href="https://iurymasulo.github.io/conversor-by.iury/" class="projeto-item" target="_blank">
+      <img src="https://www.svgrepo.com/show/253753/coin.svg" alt="Conversor de Moeda" class="projeto-icon">
+      <span><strong>Currency</strong></span>
+    </a>
+
+     <a href="https://iurymasulo.github.io/central.vendas/" class="projeto-item" target="_blank">
+      <img src="https://www.svgrepo.com/show/287547/notebook-agenda.svg" alt="Conversor de Moeda" class="projeto-icon">
+      <span><strong>Notes</strong></span>
+    </a>
+
+</div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><strong>Send me a message or visit my profiles:</strong></p>
+    <div class="contato-links">
+      <a href="mailto:iuryargel7@gmail.com" class="contato-icon" target="_blank" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 
+          2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/in/iury-argel-396a13336" class="contato-icon" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 
+          2.76 2.24 5 5 5h14c2.76 0 5-2.24 
+          5-5v-14c0-2.76-2.24-5-5-5zm-11 
+          19h-3v-10h3v10zm-1.5-11.28c-.97 
+          0-1.75-.79-1.75-1.75s.78-1.75 
+          1.75-1.75 1.75.79 
+          1.75 1.75-.78 1.75-1.75 
+          1.75zm13.5 11.28h-3v-5.5c0-1.38-1.12-2.5-2.5-2.5s-2.5 
+          1.12-2.5 2.5v5.5h-3v-10h3v1.44c.69-.87 
+          1.76-1.44 2.96-1.44 2.21 0 4 1.79 4 
+          4v6z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.instagram.com/mazzzulo" class="contato-icon" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 
+          2.8 2.2 5 5 5h10c2.8 0 5-2.2 
+          5-5V7c0-2.8-2.2-5-5-5H7zm10 
+          2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 
+          3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 
+          1.3-3 3-3h10zm-5 3c-2.8 0-5 
+          2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 
+          2c1.7 0 3 1.3 3 3s-1.3 3-3 
+          3-3-1.3-3-3 1.3-3 3-3zm4.5-2c-.6 
+          0-1 .4-1 1s.4 1 1 1 1-.4 
+          1-1-.4-1-1-1z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuLinks = document.getElementById('menu-links');
+
+    function toggleMenu() {
+      menuLinks.classList.toggle('show');
+      menuToggle.classList.toggle('active');
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Permitir abrir menu via teclado (Enter e Espaço)
+    menuToggle.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Fechar menu ao clicar em algum link (útil para dispositivos móveis)
+    document.querySelectorAll('.menu-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (menuLinks.classList.contains('show')) {
+          toggleMenu();
+        }
+      });
+    });
+  </script>
+
+<script>
+  const texto = `(...)Maior que o tempo, é tudo aquilo que não se limita ao agora, e que não pertence à um único momento... Mas ecoa além dele(...)`;
+
+  const elemento = document.getElementById("apresentacao-texto");
+  let i = 0;
+  let apagando = false;
+
+  function digitar() {
+    if (!apagando && i <= texto.length) {
+      elemento.textContent = texto.substring(0, i);
+      i++;
+      setTimeout(digitar, 40); // velocidade da digitação
+    } else if (!apagando && i > texto.length) {
+      setTimeout(() => {
+        apagando = true;
+        digitar();
+      }, 2000); // espera 2s antes de apagar
+    } else if (apagando && i >= 0) {
+      elemento.textContent = texto.substring(0, i);
+      i--;
+      setTimeout(digitar, 20); // velocidade de apagar
+    } else {
+      apagando = false;
+      setTimeout(digitar, 1000); // espera 1s antes de recomeçar
+    }
+  }
+
+  digitar();
+</script>
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menuLinks = document.querySelector('.menu-links');
+
+  toggleBtn.addEventListener('click', () => {
+    toggleBtn.classList.toggle('active'); // animação do botão
+    menuLinks.classList.toggle('show');   // exibe ou esconde o menu
+  });
+</script>
+
+ <script>
+   let slides = document.querySelectorAll(".slide");
+let currentIndex = 0;
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+// Mostrar slide atual
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+// Próximo slide
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+// Slide anterior
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+// Avanço automático
+setInterval(() => {
+  nextSlide();
+}, 5000); // 5 segundos
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+// Inicial
+showSlide(currentIndex);
+
+</script>
+
+</body>
+</html>
